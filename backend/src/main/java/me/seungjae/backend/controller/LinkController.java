@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/link")
+@RequestMapping("/api/links")
 @RequiredArgsConstructor
 public class LinkController {
     private final LinkService linkService;

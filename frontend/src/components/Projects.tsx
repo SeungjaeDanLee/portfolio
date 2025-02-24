@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
 
   return (
     <section className="p-10">
-      <h2 className="text-3xl font-bold mb-5">프로젝트</h2>
+      <h2 className="text-3xl font-bold mb-5">Projects</h2>
       <motion.div
         className="space-y-4"
         initial={{ opacity: 0, y: 20 }}

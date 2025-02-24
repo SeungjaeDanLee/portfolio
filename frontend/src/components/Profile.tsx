@@ -1,7 +1,7 @@
 const Profile = () => {
   return (
     <section className="p-10">
-      <h2 className="text-3xl font-bold mb-5">프로필</h2>
+      <h2 className="text-3xl font-bold mb-5">Profile</h2>
       
       {/* 프로필 정보가 담길 flex 컨테이너 */}
       <div className="flex items-center mb-4">
