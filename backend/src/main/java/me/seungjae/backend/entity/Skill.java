@@ -18,5 +18,9 @@ public class Skill {
     private String name; // 기술 이름
 
     @Column(nullable = true)
-    private String backgroundColor; // 해당 카테고리의 배경색 (예: "#FF5733")
+    private String backgroundColor; // 사용자가 지정하는 배경색 (예: "#FF5733")
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private SkillCategory category; // 기술이 속한 카테고리
 }
