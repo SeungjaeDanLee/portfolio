@@ -1,41 +1,31 @@
 const Profile = () => {
   return (
-    <section className="p-10">
-      <h2 className="text-3xl font-bold mb-5">Profile</h2>
-      
-      {/* 프로필 정보가 담길 flex 컨테이너 */}
-      <div className="flex items-center mb-4">
-        {/* 왼쪽 이미지 */}
-        <img 
-          src="https://via.placeholder.com/100" 
-          alt="프로필 이미지"
-          className="w-24 h-24 rounded-full mr-6"
-        />
-        {/* 오른쪽 카테고리 및 내용 */}
-        <div className="space-y-2">
-          <div className="flex">
-            <p className="font-semibold w-28">이름</p>
-            <p className="text-gray-600">이승재</p>
+    <section id="profile" className="p-10 pt-16 bg-gray-50 flex justify-center items-center">
+      <div className="max-w-6xl w-full">
+        {/* 섹션 제목 */}
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">Profile</h2>
+
+        {/* 프로필 카드 */}
+        <div className="flex flex-col md:flex-row items-center bg-white rounded-xl shadow-xl p-8 md:p-12 min-h-full">
+          {/* 프로필 이미지 */}
+          <div className="relative">
+            <img 
+              src="https://via.placeholder.com/150" 
+              alt="프로필 이미지"
+              className="w-40 h-40 rounded-full border-4 border-blue-400 shadow-lg"
+            />
+            <span className="absolute bottom-0 right-0 bg-blue-400 text-white text-xs px-2 py-1 rounded-full shadow-md">Seungjae</span>
           </div>
-          <div className="flex">
-            <p className="font-semibold w-28">생년월일</p>
-            <p className="text-gray-600">93.02.20</p>
-          </div>
-          <div className="flex">
-            <p className="font-semibold w-28">주소</p>
-            <p className="text-gray-600">서울 관악구</p>
-          </div>
-          <div className="flex">
-            <p className="font-semibold w-28">연락처</p>
-            <p className="text-gray-600">010-2060-1376</p>
-          </div>
-          <div className="flex">
-            <p className="font-semibold w-28">이메일</p>
-            <p className="text-gray-600">vqs210@gmail.com</p>
-          </div>
-          <div className="flex">
-            <p className="font-semibold w-28">학력</p>
-            <p className="text-gray-600">부산대학교(사학과)</p>
+
+          {/* 프로필 정보 */}
+          <div className="w-full md:w-auto mt-6 md:mt-0 md:ml-12 space-y-4 text-lg">
+            {[{ label: "이름", value: "이승재" }, { label: "생년월일", value: "1993.02.20" }, { label: "주소", value: "서울 관악구" }, { label: "연락처", value: "010-2060-1376" }, { label: "이메일", value: "vqs210@gmail.com" }, { label: "학력", value: "부산대학교(사학과)" }]
+              .map(({ label, value }) => (
+                <div key={label} className="flex items-center border-b pb-2 border-gray-300">
+                  <p className="font-semibold w-32 text-gray-700">{label}</p>
+                  <p className="text-gray-600">{value}</p>
+                </div>
+              ))}
           </div>
         </div>
       </div>
