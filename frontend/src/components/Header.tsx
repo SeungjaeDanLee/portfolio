@@ -2,9 +2,11 @@ import { useState } from "react";
 import HeaderLink from "./HeaderLink";
 import ThemeToggle from "./ThemeToggle";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -56,6 +58,16 @@ const Header = () => {
             )}
           </button>
         </div>
+
+        {/* Add Dashboard Link when authenticated */}
+        {isAuthenticated && (
+          <Link
+            to="/dashboard"
+            className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+          >
+            Dashboard
+          </Link>
+        )}
       </div>
 
       {/* Mobile Navigation Menu */}
